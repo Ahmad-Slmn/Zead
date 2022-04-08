@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Zead" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zead Web Wesign </title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <!-- Star Header --->
+    <header>
+        <h1><span>zead</span>web design</h1>
+        <nav id="nav">
+            <ul>
+                <li><a href="#">hom</a></li>
+                <li><a href="#">about</a></li>
+                <li><a href="#">services</a></li>
+            </ul>
+        </nav>
+        <div class="bars">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <!-- End Header --->
+
+    <!-- Star Article --->
+    <article>
+        <div class="container">
+            <div class="text">
+                <h2>affordable profesinal web designs</h2>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam doloremque nemo nulla officia pariatur velit suscipit possimus, numquam odio maxime explicabo quasi labore culpa voluptate. </p>
+            </div>
+        </div>
+    </article>
+    <!-- End Article --->
+    <form>
+        <h2>sabscribe to our new letter</h2>
+        <div>
+            <input type="email" placeholder="Enter Email">
+            <input type="submit" value="submit">
+        </div>
+    </form>
+    <!-- Star section --->
+    <section>
+        <div class="box1">
+            <img src="./images/html-512.webp" alt="Html">
+            <h3>html5 marckup</h3>
+            <p> lorem is Many novice writers tend to make a sharp distinction between content and sty thinkingbetween thinkingbetween sharp distinction</p>
+        </div>
+        <div class="box2">
+            <img src="./images/css3-512.png" alt="Css">
+            <h3>css styling</h3>
+            <p> lorem is Many novice writers tend to make a sharp distinction between content and sty thinkingbetween thinkingbetween sharp distinction</p>
+        </div>
+        <div class="box3">
+            <img src="./images/comp5.webp" alt="Computer">
+            <h3>graphic design</h3>
+            <p> lorem is Many novice writers tend to make a sharp distinction between content and sty thinkingbetween thinkingbetween sharp distinction</p>
+        </div>
+    </section>
+    <!-- End section --->
+
+    <!-- Star Footer --->
+    <footer>
+        <p>zeed ahmedslmn web design copyright &copy; 2022</p>
+    </footer>
+    <!-- End Footer --->
+    <script>
+        document.querySelector(".bars").onclick = function() {
+
+            this.classList.toggle("menu");
+
+            document.querySelector("header nav").classList.toggle("hidemenu")
+        }
+
+        let links = document.querySelectorAll("header nav ul li a");
+
+        links.forEach(function(e) {
+
+            e.onclick = function(el) {
+
+                el.preventDefault();
+
+                document.querySelector(".bars").classList.remove("menu");
+
+                document.querySelector("header nav").classList.toggle("hidemenu")
+            }
+        })
+
+        function textAnimate() {
+            let h1 = document.querySelector("article .text h2");
+            let h1Text = h1.textContent;
+            let splitText = h1Text.split("");
+            h1.textContent = "";
+
+
+            for (let i = 0; i < splitText.length; i++) {
+                h1.innerHTML += "<span>" + splitText[i] + "</span>"
+            }
+
+            let char = 0;
+            let timer = setInterval(onTick, 50);
+
+            function onTick() {
+
+                let span = h1.querySelectorAll("span")[char];
+
+                span.classList.add("fade");
+                char++;
+
+                if (char === splitText.length) {
+
+                    complete();
+                    return;
+                }
+            }
+
+            function complete() {
+                clearInterval(timer);
+                timer = null
+            }
+        }
+        textAnimate();
+
+        setInterval(function() {
+            textAnimate()
+
+        }, 5000);
+
+    </script>
+</body>

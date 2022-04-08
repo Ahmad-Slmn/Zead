@@ -1,0 +1,380 @@
+/* Star My Main Rulse */
+* {
+    box-sizing: border-box;
+    font-family: Tahoma;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    text-transform: capitalize
+}
+
+li {
+    list-style: none;
+    display: inline-block
+}
+
+:root {
+    --main-color: #36acae;
+    --main-color-alt: #1787e0;
+    --trans: .4s
+}
+
+.bars {
+    position: fixed;
+    top: 30px;
+    right: 7px;
+    width: 20px;
+    height: 14px;
+    cursor: pointer;
+    display: none;
+    z-index: 9;
+    transition: all var(--trans)
+}
+
+.bars span {
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9;
+    transition: all var(--trans)
+}
+
+.bars span:nth-child(2) {
+    top: 6px
+}
+
+
+.bars span:last-of-type {
+    top: 12px
+}
+
+.menu span:nth-child(2) {
+    opacity: 0;
+    transition: .1s
+}
+
+.menu span:first-of-type,
+.menu span:last-of-type {
+
+    top: 6px
+}
+
+.menu span:first-of-type {
+    transform: rotate(45deg)
+}
+
+.menu span:last-of-type {
+    transform: rotate(-45deg)
+}
+
+::-webkit-scrollbar {
+    width: 10px
+}
+
+::-webkit-scrollbar-thumb {
+
+    border-radius: 10px;
+    background-color: var(--main-color);
+}
+
+::placeholder {
+    transition: .4s
+}
+
+:focus::placeholder {
+    opacity: 0
+}
+
+::selection {
+    background: red;
+    color: #fff
+}
+
+
+
+
+.container {
+    width: 800px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: auto;
+    position: relative;
+    top: 50%
+}
+
+h1::c {
+    color: red
+}
+
+/* End My Main Rulse */
+
+
+/* Star Header */
+header {
+    background-color: #212830;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    border-bottom: 2px solid var(--main-color);
+    height: 60px
+}
+
+header h1 {
+    font-weight: bold;
+    font-size: 30px;
+    color: #fff;
+    margin: 10px;
+
+}
+
+
+header h1 span {
+    color: var(--main-color);
+    margin-right: 10px
+}
+
+header nav ul li {
+    padding: 15px
+}
+
+header nav ul li a {
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    transition: var(--trans);
+    position: relative
+}
+
+header nav ul li a:hover {
+    color: var(--main-color)
+}
+
+header nav li a::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: var(--main-color);
+    top: 0;
+    left: 50%;
+    transition: var(--trans)
+}
+
+header nav li a:hover::before {
+    width: 100%;
+    left: 0
+}
+
+header .main-nav li a:hover {
+    color: #36acae
+}
+
+header .main-nav li a:focus {
+    color: red
+}
+
+/* End Header  */
+
+/* Star Article */
+
+article {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden
+}
+
+article::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgb(0 0 0 / 80%);
+
+}
+
+
+article .text {
+    text-align: center;
+    color: #fff
+}
+
+article .text h2 {
+    margin: 10px;
+    font-weight: bold;
+    font-size: 30px;
+    color: transparent
+}
+
+
+article .text h2 span {
+    transition: all 1s ease-in-out
+}
+
+article .text h2 span.fade {
+    color: #fff;
+    opacity: 1
+}
+
+article .text p {
+    line-height: 1.7;
+    font-size: 15px
+}
+
+/* End Article */
+
+/* start form */
+form {
+    background-color: #212830;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 72px;
+    padding: 10px
+}
+
+
+
+
+form h2 {
+    color: #fff;
+    border-bottom: 3px solid var(--main-color)
+}
+
+input[type="email"] {
+    padding: 6px;
+    width: 300px;
+    outline: none
+}
+
+input[type="submit"] {
+    padding: 6px;
+    border-radius: 6px;
+    border: 0;
+    width: 80px;
+    background-color: var(--main-color);
+    color: #fff;
+    cursor: pointer
+}
+
+/* End form */
+
+/* Star section */
+section {
+    background: #e0e0e0ff;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 30px;
+
+
+}
+
+section div {
+    text-align: center
+}
+
+section div img {
+    width: 200px
+}
+
+section div h3 {
+    text-transform: capitalize
+}
+
+section div p {
+    margin: 20px;
+    color: #524f4f;
+    line-height: 1.6
+}
+
+/* End section */
+
+footer {
+    background-color: var(--main-color);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff
+}
+
+
+@media(max-width:450px) {
+
+    article .text h2 {
+        font-size: 15px !important
+    }
+
+    p {
+        font-size: 10px !important
+    }
+}
+
+
+@media(max-width:767px) {
+
+
+    header h1 {
+        position: fixed;
+        top: 2%;
+        z-index: 2;
+        font-size: 20px
+    }
+
+    header nav {
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        display: inline-block;
+        width: 100%;
+        padding: 80px 0% 0;
+        background: black;
+        max-height: 80px;
+        overflow: hidden;
+        transition: var(--trans)
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: column;
+        text-align: right
+    }
+
+
+    .container {
+        width: 100%
+    }
+
+    form {
+        flex-direction: column;
+        height: 100px;
+        padding-left: 0
+    }
+
+    input[type="email"] {
+        width: 250px
+    }
+
+    .bars {
+        display: block
+    }
+
+    .hidemenu {
+        max-height: 300px
+    }
+
+    article .text h2 {
+        font-size: 20px
+    }
+}
